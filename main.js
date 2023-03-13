@@ -20,7 +20,6 @@ const location_input = document.getElementById('location_input');
 
 //Asign all work to submit button
 submit_btn.addEventListener('click', (e) => {
-    console.log(location_input.value);
     place = location_input.value;
     getData(place)
 })
@@ -29,8 +28,9 @@ submit_btn.addEventListener('click', (e) => {
 //Fetch weather data from OWM
 async function getData(location) {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&APPID=b692773f1ddc1b647134f9c496e1dc86`, { mode: 'cors' });
+    //console.log(response)
     const weatherData = await response.json();
-    console.log(weatherData)
+    //console.log(weatherData)
     p_location.innerHTML = weatherData.name
     p_description.innerHTML = weatherData.weather[0].description.charAt(0).toUpperCase() + weatherData.weather[0].description.slice(1);
     p_temp.innerHTML = `Current temperature: ${Math.round(weatherData.main.temp * 10) / 10} &#8451`;
