@@ -3,7 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="styles.css">
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,23 @@
 </head>
 
 <body>
-    <p>hello</p>
+    <form action="#">
+        <label for="location_input">Enter Location</label>
+        <input type="text" id="location_input" placeholder="Enter location">
+        <button id="submit">Search</button>
+    </form>
+    <div id="weather">
+        <p id="location"></p>
+        <p id="description"></p>
+        <p id="temp"></p>
+        <p id="feels"></p>
+        <p id="wind"></p>
+        <p id="gusts"></p>
+        <p id="direction"></p>
+        <p id="clouds"></p>
+        <p id="rain"></p>
+        <p id="humidity"></p>
+    </div>
 </body>
 
 </html>
